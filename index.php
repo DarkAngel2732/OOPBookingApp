@@ -25,6 +25,7 @@ $mail = new PHPMailer(true);
     <title>OOP Booking App</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- import stylesheet from w3schools -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -69,7 +70,7 @@ $mail = new PHPMailer(true);
     <header>
         <h1>Hotel Reservations</h1>
     </header>
-        <!-- Menu 1 HTML -->
+    <!-- Menu 1 HTML -->
     <?php if (!$_POST) { ?>
         <div class="transbox">
             <form method='post'>
@@ -117,7 +118,7 @@ $mail = new PHPMailer(true);
             </form>
         </div>
         <?php
-        //checks if the Check-In date and Check-Out date are valid
+    //checks if the Check-In date and Check-Out date are valid
     } else {
         if($hotelC->getNumDays($_POST['checkIn'],$_POST['checkOut']) > 0 or $pos = true){
             $pos = true;
@@ -144,8 +145,7 @@ $mail = new PHPMailer(true);
         $hotel2 = $_POST['hotel2'];
         $numDays = $hotelC->getNumDays($checkIn, $checkOut);
 
-        //Code for menu 2
-        if (empty($_POST['send'])) {
+        if (empty($_POST['send'])) {    //Checks if $_POST['send'] has anything stored in it
         ?>
         <div class="transbox">
             <form method='post'>
